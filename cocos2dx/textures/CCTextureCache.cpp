@@ -650,25 +650,10 @@ void VolatileTexture::reloadAllTextures()
         {
         case kImageFile:
             {
-                
                 Image* pImage = new Image();
                 unsigned long nSize = 0;
-                unsigned char* pBuffer;
+                unsigned char* pBuffer = FileUtils::getInstance()->getFileData(vt->_fileName.c_str(), "rb", &nSize);
                 
-                
-                //detecgt and unzip the compress file
-                if (ZipUtils::ccIsCCZFile(vt->_fileName.c_str()))
-                {
-                    nSize = ZipUtils::ccInflateCCZFile(vt->_fileName.c_str(), &pBuffer);
-                }else if (ZipUtils::ccIsGZipFile(vt->_fileName.c_str()))
-                {
-                    nSize = ZipUtils::ccInflateGZipFile(vt->_fileName.c_str(), &pBuffer);
-                }
-                else
-                {
-                    pBuffer = FileUtils::getInstance()->getFileData(vt->_fileName.c_str(), "rb", &nSize);
-                }
-
                 if (pImage && pImage->initWithImageData((void*)pBuffer, nSize))
                 {
                     Texture2D::PixelFormat oldPixelFormat = Texture2D::getDefaultAlphaPixelFormat();
@@ -678,7 +663,7 @@ void VolatileTexture::reloadAllTextures()
                 }
                 
                 CC_SAFE_DELETE_ARRAY(pBuffer);
-                CC_SAFE_RELEASE(pImage);
+                CC_SAFE_RELEASE(pImage);    
             }
             break;
         case kImageData:
