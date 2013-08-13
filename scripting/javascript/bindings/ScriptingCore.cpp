@@ -1691,7 +1691,7 @@ jsval c_string_to_jsval(JSContext* cx, const char* v, size_t length /* = -1 */) 
     if (v == NULL) {
         return JSVAL_NULL;
     }
-    jsval ret = JSVAL_NULL;
+    jsval ret = JS_GetEmptyStringValue(cx);
     int utf16_size = 0;
     jschar* strUTF16 = (jschar*)cc_utf8_to_utf16(v, length, &utf16_size);
 
