@@ -76,6 +76,11 @@ public:
     @brief dispatch the key pad msg
     */
     bool dispatchKeypadMSG(ccKeypadMSGType nMsgType);
+    
+    /**
+     @brief dispatch the keydown event
+     */
+    bool dispatchKeypadDown(int keyCode);
 
 protected:
 

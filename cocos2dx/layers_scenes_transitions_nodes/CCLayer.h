@@ -132,6 +132,8 @@ public:
 
     virtual void keyBackClicked(void);
     virtual void keyMenuClicked(void);
+    
+    virtual void keypadDown(int);
     //
     // Overrides
     //

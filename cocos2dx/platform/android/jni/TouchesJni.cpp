@@ -73,6 +73,7 @@ extern "C" {
 
     JNIEXPORT jboolean JNICALL Java_org_cocos2dx_lib_Cocos2dxRenderer_nativeKeyDown(JNIEnv * env, jobject thiz, jint keyCode) {
         Director* pDirector = Director::getInstance();
+        CCLOG("native keyCode : %d",keyCode);
         switch (keyCode) {
             case KEYCODE_BACK:
                   if (pDirector->getKeypadDispatcher()->dispatchKeypadMSG(kTypeBackClicked))
@@ -83,6 +84,8 @@ extern "C" {
                     return JNI_TRUE;
                 break;
             default:
+                if (pDirector->getKeypadDispatcher()->dispatchKeypadDown(keyCode))
+                    return JNI_TRUE;
                 return JNI_FALSE;
         }
         return JNI_FALSE;

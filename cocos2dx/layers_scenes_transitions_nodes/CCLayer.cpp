@@ -341,6 +341,10 @@ void Layer::keyMenuClicked(void)
     }
 }
 
+void Layer::keypadDown(int)
+{
+}
+
 /// Callbacks
 void Layer::onEnter()
 {

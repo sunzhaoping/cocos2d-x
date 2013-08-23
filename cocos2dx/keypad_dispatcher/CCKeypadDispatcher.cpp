@@ -173,4 +173,49 @@ bool KeypadDispatcher::dispatchKeypadMSG(ccKeypadMSGType nMsgType)
     return true;
 }
 
+bool KeypadDispatcher::dispatchKeypadDown(int keyCode)
+{
+    KeypadHandler*  pHandler = NULL;
+    KeypadDelegate* pDelegate = NULL;
+    
+    _locked = true;
+    
+    if (_delegates->count() > 0)
+    {
+        Object* pObj = NULL;
+        CCARRAY_FOREACH(_delegates, pObj)
+        {
+            CC_BREAK_IF(!pObj);
+            
+            pHandler = (KeypadHandler*)pObj;
+            pDelegate = pHandler->getDelegate();
+            
+            pDelegate->keypadDown(keyCode);
+        }
+    }
+    
+    _locked = false;
+    if (_toRemove)
+    {
+        _toRemove = false;
+        for (unsigned int i = 0; i < _handlersToRemove->num; ++i)
+        {
+            forceRemoveDelegate((KeypadDelegate*)_handlersToRemove->arr[i]);
+        }
+        ccCArrayRemoveAllValues(_handlersToRemove);
+    }
+    
+    if (_toAdd)
+    {
+        _toAdd = false;
+        for (unsigned int i = 0; i < _handlersToAdd->num; ++i)
+        {
+            forceAddDelegate((KeypadDelegate*)_handlersToAdd->arr[i]);
+        }
+        ccCArrayRemoveAllValues(_handlersToAdd);
+    }
+    
+    return true;
+}
+
 NS_CC_END
