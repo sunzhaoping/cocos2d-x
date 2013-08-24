@@ -24,6 +24,7 @@
 #include "draw_nodes/CCDrawingPrimitives.h"
 #include "shaders/CCShaderCache.h"
 #include "textures/CCTextureCache.h"
+#include "keypad_dispatcher/CCKeypadDispatcher.h"
 
 #define LOGI(...) ((void)__android_log_print(ANDROID_LOG_INFO, "cocos2dx/nativeactivity.cpp", __VA_ARGS__))
 #define LOGW(...) ((void)__android_log_print(ANDROID_LOG_WARN, "cocos2dx/nativeactivity.cpp", __VA_ARGS__))
@@ -368,7 +369,20 @@ static int32_t engine_handle_input(struct android_app* app, AInputEvent* event) 
         engine->state.y = AMotionEvent_getY(event, 0);
 
         return handle_touch_input(event);
-    }
+    }else if(AInputEvent_getType(event) == AINPUT_EVENT_TYPE_KEY){
+       int32_t keyCode = AKeyEvent_getKeyCode(event);
+       int32_t keyAction =  AKeyEvent_getAction(event);
+       if(keyAction == AKEY_EVENT_ACTION_DOWN){
+            if( keyCode == AKEYCODE_BACK){
+                cocos2d::Director::getInstance()->getKeypadDispatcher()->dispatchKeypadMSG(cocos2d::kTypeBackClicked);
+            }else if(keyCode == AKEYCODE_MENU){
+                cocos2d::Director::getInstance()->getKeypadDispatcher()->dispatchKeypadMSG(cocos2d::kTypeMenuClicked);
+            }else{
+                cocos2d::Director::getInstance()->getKeypadDispatcher()->dispatchKeypadDown(keyCode);
+            }
+            return 1;// <-- prevent default handler
+        }
+    };
 
     return 0;
 }
