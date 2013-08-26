@@ -67,6 +67,7 @@ LabelTTF * LabelTTF::create()
     {
         CC_SAFE_DELETE(pRet);
     }
+    pRet->getTexture()->setAntiAliasTexParameters();
     return pRet;
 }
 
@@ -90,6 +91,7 @@ LabelTTF* LabelTTF::create(const char *string, const char *fontName, float fontS
     if(pRet && pRet->initWithString(string, fontName, fontSize, dimensions, hAlignment, vAlignment))
     {
         pRet->autorelease();
+        pRet->getTexture()->setAntiAliasTexParameters();
         return pRet;
     }
     CC_SAFE_DELETE(pRet);
@@ -102,6 +104,7 @@ LabelTTF * LabelTTF::createWithFontDefinition(const char *string, FontDefinition
     if(pRet && pRet->initWithStringAndTextDefinition(string, textDefinition))
     {
         pRet->autorelease();
+        pRet->getTexture()->setAntiAliasTexParameters();
         return pRet;
     }
     CC_SAFE_DELETE(pRet);
