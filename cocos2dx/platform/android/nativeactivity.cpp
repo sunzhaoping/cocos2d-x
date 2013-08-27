@@ -172,11 +172,11 @@ static cocos_dimensions engine_init_display(struct engine* engine) {
     engine->state.angle = 0;
 
     // Initialize GL state.
-    glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_FASTEST);
+    /*glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_FASTEST);
     glEnable(GL_CULL_FACE);
     glShadeModel(GL_SMOOTH);
     glDisable(GL_DEPTH_TEST);
-
+    */
     r.w = w;
     r.h = h;
 
