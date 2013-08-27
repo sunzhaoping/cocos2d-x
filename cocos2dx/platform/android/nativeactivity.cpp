@@ -88,16 +88,6 @@ static void cocos_init(cocos_dimensions d, AAssetManager* assetmanager) {
 
         cocos2d::Application::getInstance()->run();
     }
-    else
-    {
-        cocos2d::GL::invalidateStateCache();
-        cocos2d::ShaderCache::getInstance()->reloadDefaultShaders();
-        cocos2d::DrawPrimitives::init();
-        cocos2d::TextureCache::reloadAllTextures();
-        cocos2d::NotificationCenter::getInstance()->postNotification(EVNET_COME_TO_FOREGROUND, NULL);
-        cocos2d::Director::getInstance()->setGLDefaultValues(); 
-       
-    }
 }
 
 /**
@@ -173,11 +163,14 @@ static cocos_dimensions engine_init_display(struct engine* engine) {
     engine->state.angle = 0;
 
     // Initialize GL state.
-    /*glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_FASTEST);
-    glEnable(GL_CULL_FACE);
-    glShadeModel(GL_SMOOTH);
-    glDisable(GL_DEPTH_TEST);
-    */
+    cocos2d::GL::invalidateStateCache();
+    cocos2d::ShaderCache::getInstance()->reloadDefaultShaders();
+    cocos2d::DrawPrimitives::init();
+    cocos2d::TextureCache::reloadAllTextures();
+    cocos2d::NotificationCenter::getInstance()->postNotification(EVNET_COME_TO_FOREGROUND, NULL);
+    cocos2d::Director::getInstance()->setGLDefaultValues();
+    
+
     r.w = w;
     r.h = h;
 
@@ -424,39 +417,46 @@ static void engine_handle_cmd(struct android_app* app, int32_t cmd) {
     struct engine* engine = (struct engine*)app->userData;
     switch (cmd) {
         case APP_CMD_SAVE_STATE:
+            CCLOG("save state......");
             // The system has asked us to save our current state.  Do so.
             engine->app->savedState = malloc(sizeof(struct saved_state));
             *((struct saved_state*)engine->app->savedState) = engine->state;
             engine->app->savedStateSize = sizeof(struct saved_state);
             break;
         case APP_CMD_INIT_WINDOW:
+            CCLOG("init window......");
             // The window is being shown, get it ready.
             if (engine->app->window != NULL) {
                 cocos_dimensions d = engine_init_display(engine);
-                if ((d.w > 0) &&
-                    (d.h > 0)) {
-                    cocos2d::JniHelper::setJavaVM(app->activity->vm);
-                    cocos2d::JniHelper::setClassLoaderFrom(app->activity->clazz);
-
-                    // call Cocos2dxHelper.init()
-                    cocos2d::JniMethodInfo ccxhelperInit;
-                    if (!cocos2d::JniHelper::getStaticMethodInfo(ccxhelperInit,
-                                                                 "org/cocos2dx/lib/Cocos2dxHelper",
-                                                                 "init",
-                                                                 "(Landroid/app/Activity;)V")) {
-                        LOGI("cocos2d::JniHelper::getStaticMethodInfo(ccxhelperInit) FAILED");
+                if (!cocos2d::Director::getInstance()->getOpenGLView()){
+                    if ((d.w > 0) &&
+                        (d.h > 0)) {
+                        cocos2d::JniHelper::setJavaVM(app->activity->vm);
+                        cocos2d::JniHelper::setClassLoaderFrom(app->activity->clazz);
+                        
+                        // call Cocos2dxHelper.init()
+                        cocos2d::JniMethodInfo ccxhelperInit;
+                        if (!cocos2d::JniHelper::getStaticMethodInfo(ccxhelperInit,
+                                                                     "org/cocos2dx/lib/Cocos2dxHelper",
+                                                                     "init",
+                                                                     "(Landroid/app/Activity;)V")) {
+                            LOGI("cocos2d::JniHelper::getStaticMethodInfo(ccxhelperInit) FAILED");
+                        }
+                        ccxhelperInit.env->CallStaticVoidMethod(ccxhelperInit.classID,
+                                                                ccxhelperInit.methodID,
+                                                                app->activity->clazz);
+                        
+                        
+                        cocos_init(d, app->activity->assetManager);
+                        
                     }
-                    ccxhelperInit.env->CallStaticVoidMethod(ccxhelperInit.classID,
-                                                            ccxhelperInit.methodID,
-                                                            app->activity->clazz);
-
-                    cocos_init(d, app->activity->assetManager);
                 }
                 engine->animating = 1;
                 engine_draw_frame(engine);
             }
             break;
         case APP_CMD_TERM_WINDOW:
+            CCLOG("term_display......");
             // The window is being hidden or closed, clean it up.
             engine_term_display(engine);
             break;
