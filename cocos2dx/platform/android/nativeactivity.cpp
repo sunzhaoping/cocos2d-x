@@ -377,9 +377,8 @@ static int32_t engine_handle_input(struct android_app* app, AInputEvent* event) 
                 cocos2d::Director::getInstance()->getKeypadDispatcher()->dispatchKeypadMSG(cocos2d::kTypeBackClicked);
             }else if(keyCode == AKEYCODE_MENU){
                 cocos2d::Director::getInstance()->getKeypadDispatcher()->dispatchKeypadMSG(cocos2d::kTypeMenuClicked);
-            }else{
-                cocos2d::Director::getInstance()->getKeypadDispatcher()->dispatchKeypadDown(keyCode);
-            }
+            }else
+                return 0;
             return 1;// <-- prevent default handler
         }
     };
