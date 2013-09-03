@@ -9,6 +9,7 @@
 #include <android/sensor.h>
 #include <android/log.h>
 #include <android_native_app_glue.h>
+#include <android/window.h>
 
 #include <pthread.h>
 
@@ -83,7 +84,7 @@ static void cocos_init(cocos_dimensions d, AAssetManager* assetmanager) {
     {
         cocos2d::EGLView *view = cocos2d::EGLView::getInstance();
         view->setFrameSize(d.w, d.h);
-
+        
         cocos_android_app_init();
 
         cocos2d::Application::getInstance()->run();
@@ -136,7 +137,7 @@ static cocos_dimensions engine_init_display(struct engine* engine) {
     eglGetConfigAttrib(display, config, EGL_NATIVE_VISUAL_ID, &format);
 
     ANativeWindow_setBuffersGeometry(engine->app->window, 0, 0, format);
-
+    ANativeActivity_setWindowFlags(engine->app->activity, AWINDOW_FLAG_KEEP_SCREEN_ON, 0);
     surface = eglCreateWindowSurface(display, config, engine->app->window, NULL);
 
     const EGLint eglContextAttrs[] =
