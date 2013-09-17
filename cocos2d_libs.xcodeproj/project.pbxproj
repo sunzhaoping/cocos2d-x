@@ -7272,7 +7272,7 @@
 		1551A336158F2AB200E66CFE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "";
 			};
 			buildConfigurationList = 1551A339158F2AB200E66CFE /* Build configuration list for PBXProject "cocos2d_libs" */;
@@ -8232,7 +8232,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				COPY_PHASE_STRIP = NO;
@@ -8262,7 +8261,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -8333,23 +8331,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					armv7,
-					armv6,
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2dx/cocos2dx-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
 				);
+				GCC_THUMB_SUPPORT = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/scripting/lua/luajit/ios\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos7.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) \"$(SRCROOT)/cocos2dx/platform/ios\" \"$(SRCROOT)/cocos2dx/include\" \"$(SRCROOT)/cocos2dx\" \"$(SRCROOT)/cocos2dx/kazmath/include\" \"$(SRCROOT)/external/\" \"$(SRCROOT)/external/libwebsockets/ios/include\" \"$(SRCROOT)/extensions/network\" \"$(SRCROOT)/extensions/LocalStorage\" \"$(SRCROOT)/extensions/\"";
 				VALID_ARCHS = "armv6 armv7";
@@ -8360,23 +8355,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					armv7,
-					armv6,
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2dx/cocos2dx-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
 				);
+				GCC_THUMB_SUPPORT = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/scripting/lua/luajit/ios\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos7.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) \"$(SRCROOT)/cocos2dx/platform/ios\" \"$(SRCROOT)/cocos2dx/include\" \"$(SRCROOT)/cocos2dx\" \"$(SRCROOT)/cocos2dx/kazmath/include\" \"$(SRCROOT)/external/\" \"$(SRCROOT)/external/libwebsockets/ios/include\" \"$(SRCROOT)/extensions/network\" \"$(SRCROOT)/extensions/LocalStorage\" \"$(SRCROOT)/extensions/\"";
 				VALID_ARCHS = "armv6 armv7";
@@ -8387,7 +8379,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2dx/cocos2dx-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8412,7 +8403,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2dx/cocos2dx-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8587,23 +8577,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					armv6,
-					armv7,
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2dx/cocos2dx-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
 				);
+				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SDKROOT)/usr/include/libxml2\"",
 					"\"$(SRCROOT)/cocos2dx/platform/third_party/ios/libfreetype2\"",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/cocos2dx/platform/third_party/ios/libraries";
-				SDKROOT = iphoneos7.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/cocos2dx\" \"$(SRCROOT)/cocos2dx/include\" \"$(SRCROOT)/cocos2dx/kazmath/include\" \"$(SRCROOT)/cocos2dx/platform/ios\" \"$(SRCROOT)/cocos2dx/platform/third_party/ios\"/**";
 				VALID_ARCHS = "armv6 armv7";
@@ -8614,23 +8601,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					armv6,
-					armv7,
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2dx/cocos2dx-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
 				);
+				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SDKROOT)/usr/include/libxml2\"",
 					"\"$(SRCROOT)/cocos2dx/platform/third_party/ios/libfreetype2\"",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/cocos2dx/platform/third_party/ios/libraries";
-				SDKROOT = iphoneos7.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/cocos2dx\" \"$(SRCROOT)/cocos2dx/include\" \"$(SRCROOT)/cocos2dx/kazmath/include\" \"$(SRCROOT)/cocos2dx/platform/ios\" \"$(SRCROOT)/cocos2dx/platform/third_party/ios\"/**";
 				VALID_ARCHS = "armv6 armv7";
@@ -8640,11 +8624,8 @@
 		A07A4E0D178386390073F6A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv6,
-					armv7,
-				);
-				SDKROOT = iphoneos7.0;
+				GCC_THUMB_SUPPORT = NO;
+				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv6 armv7";
 			};
 			name = Debug;
@@ -8652,11 +8633,8 @@
 		A07A4E0E178386390073F6A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv6,
-					armv7,
-				);
-				SDKROOT = iphoneos7.0;
+				GCC_THUMB_SUPPORT = NO;
+				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv6 armv7";
 			};
 			name = Release;
@@ -8665,21 +8643,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					armv6,
-					armv7,
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
 				);
+				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/external/libwebsockets/ios/lib\"",
 				);
-				SDKROOT = iphoneos7.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/cocos2dx\" \"$(SRCROOT)/cocos2dx/include\" \"$(SRCROOT)/cocos2dx/platform/ios\" \"$(SRCROOT)/cocos2dx/platform/third_party/ios/\" \"$(SRCROOT)/cocos2dx/kazmath/include\" \"$(SRCROOT)/extensions/\" \"$(SRCROOT)/external\" \"$(SRCROOT)/external/libwebsockets/ios/include\"";
 				VALID_ARCHS = "armv6 armv7";
@@ -8690,21 +8665,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					armv6,
-					armv7,
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
 				);
+				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/external/libwebsockets/ios/lib\"",
 				);
-				SDKROOT = iphoneos7.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/cocos2dx\" \"$(SRCROOT)/cocos2dx/include\" \"$(SRCROOT)/cocos2dx/platform/ios\" \"$(SRCROOT)/cocos2dx/platform/third_party/ios/\" \"$(SRCROOT)/cocos2dx/kazmath/include\" \"$(SRCROOT)/extensions/\" \"$(SRCROOT)/external\" \"$(SRCROOT)/external/libwebsockets/ios/include\"";
 				VALID_ARCHS = "armv6 armv7";
@@ -8714,10 +8686,7 @@
 		A07A4F39178387670073F6A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv7,
-					armv6,
-				);
+				GCC_THUMB_SUPPORT = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -8729,10 +8698,7 @@
 		A07A4F3A178387670073F6A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv7,
-					armv6,
-				);
+				GCC_THUMB_SUPPORT = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -8744,15 +8710,12 @@
 		A07A4F9C1783876B0073F6A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv7,
-					armv6,
-				);
+				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/external/";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				SDKROOT = iphoneos7.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv6 armv7";
 			};
@@ -8761,15 +8724,12 @@
 		A07A4F9D1783876B0073F6A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv7,
-					armv6,
-				);
+				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/external/";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				SDKROOT = iphoneos7.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv6 armv7";
 			};
@@ -8779,16 +8739,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					armv7,
-					armv6,
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
 				);
+				GCC_THUMB_SUPPORT = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				SDKROOT = iphoneos7.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/CocosDenshion/ios\" \"$(SRCROOT)/cocos2dx/platform/ios\" \"$(SRCROOT)/cocos2dx/include\" \"$(SRCROOT)/cocos2dx\" \"$(SRCROOT)/cocos2dx/kazmath/include\"";
 				VALID_ARCHS = "armv6 armv7";
@@ -8799,16 +8756,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					armv7,
-					armv6,
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
 				);
+				GCC_THUMB_SUPPORT = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				SDKROOT = iphoneos7.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/CocosDenshion/ios\" \"$(SRCROOT)/cocos2dx/platform/ios\" \"$(SRCROOT)/cocos2dx/include\" \"$(SRCROOT)/cocos2dx\" \"$(SRCROOT)/cocos2dx/kazmath/include\"";
 				VALID_ARCHS = "armv6 armv7";
@@ -8819,21 +8773,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					armv7,
-					armv6,
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					COCOS2D_JAVASCRIPT,
 					CC_TARGET_OS_IPHONE,
 				);
+				GCC_THUMB_SUPPORT = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/scripting/javascript/spidermonkey-ios/lib\"",
 				);
-				SDKROOT = iphoneos7.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) \"$(SRCROOT)/cocos2dx/platform/ios\" \"$(SRCROOT)/cocos2dx/include\" \"$(SRCROOT)/cocos2dx\" \"$(SRCROOT)/cocos2dx/kazmath/include\" \"$(SRCROOT)/scripting/javascript/spidermonkey-ios/include\" \"$(SRCROOT)/external/\" \"$(SRCROOT)/external/libwebsockets/ios/include\" \"$(SRCROOT)/extensions/network\" \"$(SRCROOT)/extensions/LocalStorage\" \"$(SRCROOT)/extensions/\"";
 				VALID_ARCHS = "armv6 armv7";
@@ -8844,21 +8795,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					armv7,
-					armv6,
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					COCOS2D_JAVASCRIPT,
 					CC_TARGET_OS_IPHONE,
 				);
+				GCC_THUMB_SUPPORT = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/scripting/javascript/spidermonkey-ios/lib\"",
 				);
-				SDKROOT = iphoneos7.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) \"$(SRCROOT)/cocos2dx/platform/ios\" \"$(SRCROOT)/cocos2dx/include\" \"$(SRCROOT)/cocos2dx\" \"$(SRCROOT)/cocos2dx/kazmath/include\" \"$(SRCROOT)/scripting/javascript/spidermonkey-ios/include\" \"$(SRCROOT)/external/\" \"$(SRCROOT)/external/libwebsockets/ios/include\" \"$(SRCROOT)/extensions/network\" \"$(SRCROOT)/extensions/LocalStorage\" \"$(SRCROOT)/extensions/\"";
 				VALID_ARCHS = "armv6 armv7";

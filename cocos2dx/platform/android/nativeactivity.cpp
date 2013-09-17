@@ -416,6 +416,8 @@ void setAccelerometerInterval(float interval) {
  */
 static void engine_handle_cmd(struct android_app* app, int32_t cmd) {
     struct engine* engine = (struct engine*)app->userData;
+    cocos2d::JniHelper::setJavaVM(app->activity->vm);
+    cocos2d::JniHelper::setClassLoaderFrom(app->activity->clazz);
     switch (cmd) {
         case APP_CMD_SAVE_STATE:
             CCLOG("save state......");
@@ -432,9 +434,6 @@ static void engine_handle_cmd(struct android_app* app, int32_t cmd) {
                 if (!cocos2d::Director::getInstance()->getOpenGLView()){
                     if ((d.w > 0) &&
                         (d.h > 0)) {
-                        cocos2d::JniHelper::setJavaVM(app->activity->vm);
-                        cocos2d::JniHelper::setClassLoaderFrom(app->activity->clazz);
-                        
                         // call Cocos2dxHelper.init()
                         cocos2d::JniMethodInfo ccxhelperInit;
                         if (!cocos2d::JniHelper::getStaticMethodInfo(ccxhelperInit,
