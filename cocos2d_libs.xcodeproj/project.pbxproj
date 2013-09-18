@@ -8646,7 +8646,7 @@
 				);
 				GCC_THUMB_SUPPORT = NO;
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv6 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -8659,7 +8659,7 @@
 				);
 				GCC_THUMB_SUPPORT = NO;
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv6 armv7 armv7s";
 			};
 			name = Release;
 		};
