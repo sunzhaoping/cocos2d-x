@@ -8331,10 +8331,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					armv6,
-					armv7,
-				);
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2dx/cocos2dx-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8359,10 +8356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					armv6,
-					armv7,
-				);
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2dx/cocos2dx-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8585,10 +8579,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					armv6,
-					armv7,
-				);
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2dx/cocos2dx-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8613,10 +8604,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					armv6,
-					armv7,
-				);
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2dx/cocos2dx-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8640,10 +8628,7 @@
 		A07A4E0D178386390073F6A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv6,
-					armv7,
-				);
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				GCC_THUMB_SUPPORT = NO;
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv6 armv7 armv7s";
@@ -8653,10 +8638,7 @@
 		A07A4E0E178386390073F6A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv6,
-					armv7,
-				);
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				GCC_THUMB_SUPPORT = NO;
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv6 armv7 armv7s";
@@ -8667,10 +8649,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					armv6,
-					armv7,
-				);
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
@@ -8693,10 +8672,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					armv6,
-					armv7,
-				);
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
@@ -8718,10 +8694,7 @@
 		A07A4F39178387670073F6A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv6,
-					armv7,
-				);
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				GCC_THUMB_SUPPORT = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
@@ -8734,10 +8707,7 @@
 		A07A4F3A178387670073F6A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv6,
-					armv7,
-				);
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				GCC_THUMB_SUPPORT = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
@@ -8750,10 +8720,7 @@
 		A07A4F9C1783876B0073F6A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv6,
-					armv7,
-				);
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
@@ -8768,10 +8735,7 @@
 		A07A4F9D1783876B0073F6A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv6,
-					armv7,
-				);
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
@@ -8787,10 +8751,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					armv6,
-					armv7,
-				);
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
@@ -8808,10 +8769,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					armv6,
-					armv7,
-				);
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
@@ -8829,10 +8787,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					armv6,
-					armv7,
-				);
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					COCOS2D_JAVASCRIPT,
@@ -8855,10 +8810,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					armv6,
-					armv7,
-				);
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					COCOS2D_JAVASCRIPT,
