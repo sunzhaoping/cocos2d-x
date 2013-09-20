@@ -3473,7 +3473,6 @@
 		1551A334158F2AB200E66CFE = {
 			isa = PBXGroup;
 			children = (
-				1A11958117851F4200D62A44 /* lua */,
 				A03F320217814803006731B9 /* javascript */,
 				A03F2FD7178145F2006731B9 /* extensions */,
 				A03F2ED7178143BA006731B9 /* CocosDenshion */,
@@ -3526,6 +3525,7 @@
 				1A1196931785201F00D62A44 /* tolua */,
 			);
 			name = lua;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		1A1195921785201F00D62A44 /* cocos2dx_support */ = {
@@ -3651,8 +3651,9 @@
 		A03F1DDA1780BAE4006731B9 /* cocos2dx */ = {
 			isa = PBXGroup;
 			children = (
-				A03F1E041780BAE4006731B9 /* ccFPSImages.c */,
+				1A11958117851F4200D62A44 /* lua */,
 				A03F1DFE1780BAE4006731B9 /* CCCamera.cpp */,
+				A03F1E041780BAE4006731B9 /* ccFPSImages.c */,
 				A03F1E001780BAE4006731B9 /* CCConfiguration.cpp */,
 				A03F1E021780BAE4006731B9 /* CCDirector.cpp */,
 				A03F1E061780BAE4006731B9 /* CCScheduler.cpp */,
@@ -8331,7 +8332,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_INCLUDING_64_BIT)",
+					armv6,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2dx/cocos2dx-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8348,7 +8352,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) \"$(SRCROOT)/cocos2dx/platform/ios\" \"$(SRCROOT)/cocos2dx/include\" \"$(SRCROOT)/cocos2dx\" \"$(SRCROOT)/cocos2dx/kazmath/include\" \"$(SRCROOT)/external/\" \"$(SRCROOT)/external/libwebsockets/ios/include\" \"$(SRCROOT)/extensions/network\" \"$(SRCROOT)/extensions/LocalStorage\" \"$(SRCROOT)/extensions/\"";
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv6 armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -8356,7 +8360,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_INCLUDING_64_BIT)",
+					armv6,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2dx/cocos2dx-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8373,7 +8380,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) \"$(SRCROOT)/cocos2dx/platform/ios\" \"$(SRCROOT)/cocos2dx/include\" \"$(SRCROOT)/cocos2dx\" \"$(SRCROOT)/cocos2dx/kazmath/include\" \"$(SRCROOT)/external/\" \"$(SRCROOT)/external/libwebsockets/ios/include\" \"$(SRCROOT)/extensions/network\" \"$(SRCROOT)/extensions/LocalStorage\" \"$(SRCROOT)/extensions/\"";
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv6 armv7 armv7s arm64";
 			};
 			name = Release;
 		};
@@ -8579,7 +8586,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_INCLUDING_64_BIT)",
+					armv6,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2dx/cocos2dx-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8596,7 +8606,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/cocos2dx\" \"$(SRCROOT)/cocos2dx/include\" \"$(SRCROOT)/cocos2dx/kazmath/include\" \"$(SRCROOT)/cocos2dx/platform/ios\" \"$(SRCROOT)/cocos2dx/platform/third_party/ios\"/**";
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv6 armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -8604,7 +8614,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_INCLUDING_64_BIT)",
+					armv6,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2dx/cocos2dx-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8621,14 +8634,17 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/cocos2dx\" \"$(SRCROOT)/cocos2dx/include\" \"$(SRCROOT)/cocos2dx/kazmath/include\" \"$(SRCROOT)/cocos2dx/platform/ios\" \"$(SRCROOT)/cocos2dx/platform/third_party/ios\"/**";
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv6 armv7 armv7s arm64";
 			};
 			name = Release;
 		};
 		A07A4E0D178386390073F6A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_INCLUDING_64_BIT)",
+					armv6,
+				);
 				GCC_THUMB_SUPPORT = NO;
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv6 armv7 armv7s";
@@ -8638,7 +8654,10 @@
 		A07A4E0E178386390073F6A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_INCLUDING_64_BIT)",
+					armv6,
+				);
 				GCC_THUMB_SUPPORT = NO;
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv6 armv7 armv7s";
@@ -8649,7 +8668,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_INCLUDING_64_BIT)",
+					armv6,
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
@@ -8664,7 +8686,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/cocos2dx\" \"$(SRCROOT)/cocos2dx/include\" \"$(SRCROOT)/cocos2dx/platform/ios\" \"$(SRCROOT)/cocos2dx/platform/third_party/ios/\" \"$(SRCROOT)/cocos2dx/kazmath/include\" \"$(SRCROOT)/extensions/\" \"$(SRCROOT)/external\" \"$(SRCROOT)/external/libwebsockets/ios/include\"";
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv6 armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -8672,7 +8694,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_INCLUDING_64_BIT)",
+					armv6,
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
@@ -8687,40 +8712,49 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/cocos2dx\" \"$(SRCROOT)/cocos2dx/include\" \"$(SRCROOT)/cocos2dx/platform/ios\" \"$(SRCROOT)/cocos2dx/platform/third_party/ios/\" \"$(SRCROOT)/cocos2dx/kazmath/include\" \"$(SRCROOT)/extensions/\" \"$(SRCROOT)/external\" \"$(SRCROOT)/external/libwebsockets/ios/include\"";
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv6 armv7 armv7s arm64";
 			};
 			name = Release;
 		};
 		A07A4F39178387670073F6A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_INCLUDING_64_BIT)",
+					armv6,
+				);
 				GCC_THUMB_SUPPORT = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/external/chipmunk/include/chipmunk/";
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv6 armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
 		A07A4F3A178387670073F6A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_INCLUDING_64_BIT)",
+					armv6,
+				);
 				GCC_THUMB_SUPPORT = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/external/chipmunk/include/chipmunk/";
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv6 armv7 armv7s arm64";
 			};
 			name = Release;
 		};
 		A07A4F9C1783876B0073F6A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_INCLUDING_64_BIT)",
+					armv6,
+				);
 				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
@@ -8728,14 +8762,17 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv6 armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
 		A07A4F9D1783876B0073F6A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_INCLUDING_64_BIT)",
+					armv6,
+				);
 				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
@@ -8743,7 +8780,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv6 armv7 armv7s arm64";
 			};
 			name = Release;
 		};
@@ -8751,7 +8788,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_INCLUDING_64_BIT)",
+					armv6,
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
@@ -8761,7 +8801,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/CocosDenshion/ios\" \"$(SRCROOT)/cocos2dx/platform/ios\" \"$(SRCROOT)/cocos2dx/include\" \"$(SRCROOT)/cocos2dx\" \"$(SRCROOT)/cocos2dx/kazmath/include\"";
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv6 armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -8769,7 +8809,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_INCLUDING_64_BIT)",
+					armv6,
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
@@ -8779,7 +8822,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/CocosDenshion/ios\" \"$(SRCROOT)/cocos2dx/platform/ios\" \"$(SRCROOT)/cocos2dx/include\" \"$(SRCROOT)/cocos2dx\" \"$(SRCROOT)/cocos2dx/kazmath/include\"";
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv6 armv7 armv7s arm64";
 			};
 			name = Release;
 		};
@@ -8787,7 +8830,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_INCLUDING_64_BIT)",
+					armv6,
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					COCOS2D_JAVASCRIPT,
@@ -8802,7 +8848,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) \"$(SRCROOT)/cocos2dx/platform/ios\" \"$(SRCROOT)/cocos2dx/include\" \"$(SRCROOT)/cocos2dx\" \"$(SRCROOT)/cocos2dx/kazmath/include\" \"$(SRCROOT)/scripting/javascript/spidermonkey-ios/include\" \"$(SRCROOT)/external/\" \"$(SRCROOT)/external/libwebsockets/ios/include\" \"$(SRCROOT)/extensions/network\" \"$(SRCROOT)/extensions/LocalStorage\" \"$(SRCROOT)/extensions/\"";
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv6 armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -8810,7 +8856,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_INCLUDING_64_BIT)",
+					armv6,
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					COCOS2D_JAVASCRIPT,
@@ -8825,7 +8874,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) \"$(SRCROOT)/cocos2dx/platform/ios\" \"$(SRCROOT)/cocos2dx/include\" \"$(SRCROOT)/cocos2dx\" \"$(SRCROOT)/cocos2dx/kazmath/include\" \"$(SRCROOT)/scripting/javascript/spidermonkey-ios/include\" \"$(SRCROOT)/external/\" \"$(SRCROOT)/external/libwebsockets/ios/include\" \"$(SRCROOT)/extensions/network\" \"$(SRCROOT)/extensions/LocalStorage\" \"$(SRCROOT)/extensions/\"";
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv6 armv7 armv7s arm64";
 			};
 			name = Release;
 		};
