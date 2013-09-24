@@ -45,7 +45,8 @@ THE SOFTWARE.
 // external
 #include "kazmath/GL/matrix.h"
 #include <string.h>
-
+#include "support/CCNotificationCenter.h"
+#include "CCEventType.h"
 using namespace std;
 
 NS_CC_BEGIN
@@ -83,13 +84,29 @@ Sprite* Sprite::createWithTexture(Texture2D *texture, const Rect& rect)
 Sprite* Sprite::create(const char *filename)
 {
     Sprite *sprite = new Sprite();
-    if (sprite && sprite->initWithFile(filename))
+    std::string afile = std::string(filename);
+    
+    
+    if(afile.find("http",0) != string::npos){
+         sprite->url = filename;
+         cocos2d::NotificationCenter::getInstance()->postNotification(EVENT_LOAD_URL_IMG, sprite);
+         afile = "none.png";
+    }
+    
+    if (sprite && sprite->initWithFile(afile.c_str()))
     {
         sprite->autorelease();
         return sprite;
     }
+    
     CC_SAFE_DELETE(sprite);
     return NULL;
+}
+
+static Sprite* createWithURL(const char *url){
+    Sprite * sprite = Sprite::create();
+    
+    return sprite;
 }
 
 Sprite* Sprite::create(const char *filename, const Rect& rect)

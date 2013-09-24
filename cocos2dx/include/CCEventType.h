@@ -16,4 +16,5 @@
 // This message is posted in cocos2dx/platform/android/jni/MessageJni.cpp.
 #define EVENT_COME_TO_BACKGROUND    "event_come_to_background"
 
+#define EVENT_LOAD_URL_IMG   "load_url_img"
 #endif // __CCEVENT_TYPE_H__

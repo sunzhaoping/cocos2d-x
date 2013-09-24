@@ -82,7 +82,7 @@ class CC_DLL Sprite : public NodeRGBA, public TextureProtocol
 #endif // EMSCRIPTEN
 {
 public:
-
+    std::string url;
     static const int kSpriteIndexNotInitialized = -1; /// Sprite invalid index on the SpriteBatchNode
 
     /// @{
