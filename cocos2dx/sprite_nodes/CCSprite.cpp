@@ -86,16 +86,18 @@ Sprite* Sprite::create(const char *filename)
     Sprite *sprite = new Sprite();
     std::string afile = std::string(filename);
     
-    
+    bool remote_load = false;
     if(afile.find("http",0) != string::npos){
          sprite->url = filename;
-         cocos2d::NotificationCenter::getInstance()->postNotification(EVENT_LOAD_URL_IMG, sprite);
          afile = "none.png";
+         remote_load = true;
     }
     
     if (sprite && sprite->initWithFile(afile.c_str()))
     {
         sprite->autorelease();
+        if(remote_load)
+            cocos2d::NotificationCenter::getInstance()->postNotification(EVENT_LOAD_URL_IMG, sprite);
         return sprite;
     }
     
