@@ -23,8 +23,10 @@ THE SOFTWARE.
  ****************************************************************************/
 package org.cocos2dx.lib;
 
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.io.UnsupportedEncodingException;
 import java.util.Locale;
+import java.lang.Runnable;
 
 import android.app.Activity;
 import android.content.Context;
@@ -38,11 +40,14 @@ import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
 
+
+
 public class Cocos2dxHelper {
 	// ===========================================================
 	// Constants
 	// ===========================================================
 	private static final String PREFS_NAME = "Cocos2dxPrefsFile";
+    private static final int RUNNABLES_PER_FRAME = 5;
 
 	// ===========================================================
 	// Fields
@@ -56,7 +61,7 @@ public class Cocos2dxHelper {
 	private static String sFileDirectory;
 	private static Activity sActivity = null;
 	private static Cocos2dxHelperListener sCocos2dxHelperListener;
-
+    private static ConcurrentLinkedQueue<Runnable> jobs = new ConcurrentLinkedQueue<Runnable>();
     /**
      * Optional meta-that can be in the manifest for this component, specifying
      * the name of the native shared library to load.  If not specified,
@@ -64,6 +69,22 @@ public class Cocos2dxHelper {
      */
     private static final String META_DATA_LIB_NAME = "android.app.lib_name";
     private static final String DEFAULT_LIB_NAME = "main";
+    
+    public static void dispatchPendingRunnables() {
+            for (int i = RUNNABLES_PER_FRAME; i > 0; i--) {
+                  Runnable job = jobs.poll();
+                  if (job == null) {
+                        return;
+                      }
+                  job.run();
+                }
+          }
+    
+    public static void runOnGLThread(final Runnable r) {
+            jobs.add(r);
+    }
+    
+    
 
 	// ===========================================================
 	// Constructors
