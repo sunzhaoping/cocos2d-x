@@ -94,6 +94,8 @@ bool FontFreeType::createFontObject(const std::string &fontName, int fontSize)
 	int fontSizePoints = (int)(64.f * fontSize);
 	if( FT_Set_Char_Size(face, fontSizePoints, fontSizePoints, dpi, dpi) )
         return false;
+     
+    CC_SAFE_DELETE_ARRAY(data);
     
     // store the face globally
     _fontRef = face;

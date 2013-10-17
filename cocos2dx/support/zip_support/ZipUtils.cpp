@@ -314,7 +314,10 @@ bool ZipUtils::ccIsCCZFile(const char *path)
         return false;
     }
 
-    return ccIsCCZBuffer(compressed, fileLen);
+    bool result = ccIsCCZBuffer(compressed, fileLen);
+
+    CC_SAFE_DELETE_ARRAY(compressed);
+    return result;
 }
 
 bool ZipUtils::ccIsCCZBuffer(const unsigned char *buffer, int len)
@@ -343,7 +346,9 @@ bool ZipUtils::ccIsGZipFile(const char *path)
         return false;
     }
 
-    return ccIsGZipBuffer(compressed, fileLen);
+    bool result = ccIsGZipBuffer(compressed, fileLen);
+    CC_SAFE_DELETE_ARRAY(compressed);
+    return result;
 }
 
 bool ZipUtils::ccIsGZipBuffer(const unsigned char *buffer, int len)
@@ -464,7 +469,8 @@ int ZipUtils::ccInflateCCZFile(const char *path, unsigned char **out)
         return -1;
     }
     
-    return ccInflateCCZBuffer(compressed, fileLen, out);
+    int result = ccInflateCCZBuffer(compressed, fileLen, out);
+    return result;
 }
 
 void ZipUtils::ccSetPvrEncryptionKeyPart(int index, unsigned int value)
