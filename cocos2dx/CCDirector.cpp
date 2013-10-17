@@ -178,6 +178,9 @@ Director::~Director(void)
     CC_SAFE_RELEASE(_notificationNode);
     CC_SAFE_RELEASE(_scenesStack);
     CC_SAFE_RELEASE(_scheduler);
+    if (_actionManager) {
+        _actionManager->removeAllActions();
+    }
     CC_SAFE_RELEASE(_actionManager);
     CC_SAFE_RELEASE(_touchDispatcher);
     CC_SAFE_RELEASE(_keyboardDispatcher);
