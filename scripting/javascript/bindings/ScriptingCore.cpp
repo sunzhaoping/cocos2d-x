@@ -505,7 +505,7 @@ JSBool ScriptingCore::runScript(const char *path, JSObject* global, JSContext* c
                                     &length);
     if (data) {
         script = JS_DecodeScript(cx, data, length, NULL, NULL);
-        delete[] data;
+        CC_SAFE_DELETE_ARRAY(data);
     }
     
     // b) no jsc file, check js file
