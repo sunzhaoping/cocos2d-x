@@ -332,7 +332,7 @@ void EGLViewProtocol::getSetOfTouchesEndOrCancel(Set& set, int num, int ids[], f
     for (auto& touch : set)
     {
         // delete the touch object.
-        delete touch;
+        touch->release();
     }
     
 }
