@@ -308,7 +308,7 @@ void EGLViewProtocol::getSetOfTouchesEndOrCancel(Set& set, int num, int ids[], f
             set.addObject(pTouch);
 
             // release the object
-            pTouch->release();
+            //pTouch->release();
             s_pTouches[pIndex->getValue()] = NULL;
             removeUsedIndexBit(pIndex->getValue());
 
@@ -328,6 +328,13 @@ void EGLViewProtocol::getSetOfTouchesEndOrCancel(Set& set, int num, int ids[], f
         CCLOG("touchesEnded or touchesCancel: count = 0");
         return;
     }
+    
+    for (auto& touch : set)
+    {
+        // delete the touch object.
+        delete touch;
+    }
+    
 }
 
 void EGLViewProtocol::handleTouchesEnd(int num, int ids[], float xs[], float ys[])

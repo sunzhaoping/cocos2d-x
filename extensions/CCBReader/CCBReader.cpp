@@ -145,7 +145,7 @@ CCBReader::~CCBReader() {
     this->_stringCache.clear();
     CC_SAFE_RELEASE(_nodesWithAnimationManagers);
     CC_SAFE_RELEASE(_animationManagersForNodes);
-
+    
     setAnimationManager(NULL);
 }
 
@@ -247,12 +247,10 @@ Node* CCBReader::readNodeGraphFromFile(const char *pCCBFileName, Object *pOwner,
     unsigned long size = 0;
 
     unsigned char * pBytes = FileUtils::getInstance()->getFileData(strPath.c_str(), "rb", &size);
-    Data *data = new Data(pBytes, size);
+    Data *data = Data::create(pBytes, size);
     CC_SAFE_DELETE_ARRAY(pBytes);
 
     Node *ret =  this->readNodeGraphFromData(data, pOwner, parentSize);
-    
-    data->release();
     
     return ret;
 }
@@ -269,8 +267,10 @@ Node* CCBReader::readNodeGraphFromData(Data *pData, Object *pOwner, const Size &
 
     _actionManager->setRootContainerSize(parentSize);
     _actionManager->_owner = _owner;
-    _ownerOutletNodes = new Array();
-    _ownerCallbackNodes = new Array();
+    _ownerOutletNodes = Array::create();
+    _ownerOutletNodes->retain();
+    _ownerCallbackNodes = Array::create();
+    _ownerCallbackNodes->retain();
     
     Dictionary* animationManagers = Dictionary::create();
     Node *pNodeGraph = readFileWithCleanUp(true, animationManagers);
