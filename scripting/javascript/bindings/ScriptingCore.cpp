@@ -1701,8 +1701,8 @@ jsval c_string_to_jsval(JSContext* cx, const char* v, size_t length /* = -1 */) 
         if (str) {
             ret = STRING_TO_JSVAL(str);
         }
-        delete[] strUTF16;
     }
+    CC_SAFE_DELETE_ARRAY(strUTF16);
     return ret;
 }
 
