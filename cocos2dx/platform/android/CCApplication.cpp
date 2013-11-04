@@ -66,7 +66,10 @@ LanguageType Application::getCurrentLanguage()
 
     if (0 == strcmp("zh", pLanguageName))
     {
-        ret = LanguageType::CHINESE;
+        if(languageName.find("zh_TW") == 0)
+            ret = LanguageType::CHINESE_T;
+        else
+            ret = LanguageType::CHINESE_S;
     }
     else if (0 == strcmp("en", pLanguageName))
     {

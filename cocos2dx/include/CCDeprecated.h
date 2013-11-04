@@ -947,7 +947,8 @@ CC_DEPRECATED_ATTRIBUTE const int kCCNodeOnCleanup = kNodeOnCleanup;
 
 
 CC_DEPRECATED_ATTRIBUTE const LanguageType kLanguageEnglish     = LanguageType::ENGLISH;
-CC_DEPRECATED_ATTRIBUTE const LanguageType kLanguageChinese     = LanguageType::CHINESE;
+CC_DEPRECATED_ATTRIBUTE const LanguageType kLanguageChineseT    = LanguageType::CHINESE_T;
+CC_DEPRECATED_ATTRIBUTE const LanguageType kLanguageChineseS    = LanguageType::CHINESE_S;
 CC_DEPRECATED_ATTRIBUTE const LanguageType kLanguageFrench      = LanguageType::FRENCH;
 CC_DEPRECATED_ATTRIBUTE const LanguageType kLanguageItalian     = LanguageType::ITALIAN;
 CC_DEPRECATED_ATTRIBUTE const LanguageType kLanguageGerman      = LanguageType::GERMAN;

@@ -89,7 +89,10 @@ LanguageType Application::getCurrentLanguage()
     LanguageType ret = LanguageType::ENGLISH;
     if ([languageCode isEqualToString:@"zh"])
     {
-        ret = LanguageType::CHINESE;
+        if ( [currentLanguage isEqualToString:@"zh-Hant"])
+            ret = LanguageType::CHINESE_T;
+        else
+            ret = LanguageType::CHINESE_S;
     }
     else if ([languageCode isEqualToString:@"en"])
     {
