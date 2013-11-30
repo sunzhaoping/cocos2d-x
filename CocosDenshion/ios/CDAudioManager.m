@@ -569,8 +569,6 @@ static BOOL configured = FALSE;
 
 -(void) pauseBackgroundMusic
 {
-    if (![self.backgroundMusic isPlaying])
-        return;
     [self.backgroundMusic pause];
 }    
 

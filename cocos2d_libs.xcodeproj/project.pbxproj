@@ -578,18 +578,6 @@
 		A03F2E871780BE59006731B9 /* b2Rope.h in Headers */ = {isa = PBXBuildFile; fileRef = A03F2E261780BE59006731B9 /* b2Rope.h */; };
 		A03F2F79178143BA006731B9 /* Export.h in Headers */ = {isa = PBXBuildFile; fileRef = A03F2EF0178143BA006731B9 /* Export.h */; };
 		A03F2F7A178143BA006731B9 /* SimpleAudioEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = A03F2EF1178143BA006731B9 /* SimpleAudioEngine.h */; };
-		A03F2F8A178143BA006731B9 /* CDAudioManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A03F2F04178143BA006731B9 /* CDAudioManager.h */; };
-		A03F2F8B178143BA006731B9 /* CDAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A03F2F05178143BA006731B9 /* CDAudioManager.m */; };
-		A03F2F8C178143BA006731B9 /* CDConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = A03F2F06178143BA006731B9 /* CDConfig.h */; };
-		A03F2F8D178143BA006731B9 /* CDOpenALSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = A03F2F07178143BA006731B9 /* CDOpenALSupport.h */; };
-		A03F2F8E178143BA006731B9 /* CDOpenALSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = A03F2F08178143BA006731B9 /* CDOpenALSupport.m */; };
-		A03F2F8F178143BA006731B9 /* CDXMacOSXSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = A03F2F09178143BA006731B9 /* CDXMacOSXSupport.h */; };
-		A03F2F90178143BA006731B9 /* CDXMacOSXSupport.mm in Sources */ = {isa = PBXBuildFile; fileRef = A03F2F0A178143BA006731B9 /* CDXMacOSXSupport.mm */; };
-		A03F2F91178143BA006731B9 /* CocosDenshion.h in Headers */ = {isa = PBXBuildFile; fileRef = A03F2F0B178143BA006731B9 /* CocosDenshion.h */; };
-		A03F2F92178143BA006731B9 /* CocosDenshion.m in Sources */ = {isa = PBXBuildFile; fileRef = A03F2F0C178143BA006731B9 /* CocosDenshion.m */; };
-		A03F2F93178143BA006731B9 /* SimpleAudioEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = A03F2F0D178143BA006731B9 /* SimpleAudioEngine.mm */; };
-		A03F2F94178143BA006731B9 /* SimpleAudioEngine_objc.h in Headers */ = {isa = PBXBuildFile; fileRef = A03F2F0E178143BA006731B9 /* SimpleAudioEngine_objc.h */; };
-		A03F2F95178143BA006731B9 /* SimpleAudioEngine_objc.m in Sources */ = {isa = PBXBuildFile; fileRef = A03F2F0F178143BA006731B9 /* SimpleAudioEngine_objc.m */; };
 		A03F30F8178145F3006731B9 /* AssetsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A03F2FDA178145F2006731B9 /* AssetsManager.cpp */; };
 		A03F30F9178145F3006731B9 /* AssetsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A03F2FDB178145F2006731B9 /* AssetsManager.h */; };
 		A03F30FA178145F3006731B9 /* CCArmatureAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A03F2FDE178145F2006731B9 /* CCArmatureAnimation.cpp */; };
@@ -2611,18 +2599,6 @@
 		A03F2ED617814268006731B9 /* libCocosDenshion Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCocosDenshion Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A03F2EF0178143BA006731B9 /* Export.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Export.h; sourceTree = "<group>"; };
 		A03F2EF1178143BA006731B9 /* SimpleAudioEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleAudioEngine.h; sourceTree = "<group>"; };
-		A03F2F04178143BA006731B9 /* CDAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAudioManager.h; sourceTree = "<group>"; };
-		A03F2F05178143BA006731B9 /* CDAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAudioManager.m; sourceTree = "<group>"; };
-		A03F2F06178143BA006731B9 /* CDConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConfig.h; sourceTree = "<group>"; };
-		A03F2F07178143BA006731B9 /* CDOpenALSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOpenALSupport.h; sourceTree = "<group>"; };
-		A03F2F08178143BA006731B9 /* CDOpenALSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOpenALSupport.m; sourceTree = "<group>"; };
-		A03F2F09178143BA006731B9 /* CDXMacOSXSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDXMacOSXSupport.h; sourceTree = "<group>"; };
-		A03F2F0A178143BA006731B9 /* CDXMacOSXSupport.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CDXMacOSXSupport.mm; sourceTree = "<group>"; };
-		A03F2F0B178143BA006731B9 /* CocosDenshion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosDenshion.h; sourceTree = "<group>"; };
-		A03F2F0C178143BA006731B9 /* CocosDenshion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosDenshion.m; sourceTree = "<group>"; };
-		A03F2F0D178143BA006731B9 /* SimpleAudioEngine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SimpleAudioEngine.mm; sourceTree = "<group>"; };
-		A03F2F0E178143BA006731B9 /* SimpleAudioEngine_objc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleAudioEngine_objc.h; sourceTree = "<group>"; };
-		A03F2F0F178143BA006731B9 /* SimpleAudioEngine_objc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleAudioEngine_objc.m; sourceTree = "<group>"; };
 		A03F2FD617814595006731B9 /* libcocos2dx-extensions Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libcocos2dx-extensions Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A03F2FDA178145F2006731B9 /* AssetsManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssetsManager.cpp; sourceTree = "<group>"; };
 		A03F2FDB178145F2006731B9 /* AssetsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetsManager.h; sourceTree = "<group>"; };
@@ -4516,7 +4492,6 @@
 			children = (
 				A07A50311783885B0073F6A7 /* ios */,
 				A03F2EEF178143BA006731B9 /* include */,
-				A03F2F03178143BA006731B9 /* mac */,
 			);
 			path = CocosDenshion;
 			sourceTree = "<group>";
@@ -4528,25 +4503,6 @@
 				A03F2EF1178143BA006731B9 /* SimpleAudioEngine.h */,
 			);
 			path = include;
-			sourceTree = "<group>";
-		};
-		A03F2F03178143BA006731B9 /* mac */ = {
-			isa = PBXGroup;
-			children = (
-				A03F2F04178143BA006731B9 /* CDAudioManager.h */,
-				A03F2F05178143BA006731B9 /* CDAudioManager.m */,
-				A03F2F06178143BA006731B9 /* CDConfig.h */,
-				A03F2F07178143BA006731B9 /* CDOpenALSupport.h */,
-				A03F2F08178143BA006731B9 /* CDOpenALSupport.m */,
-				A03F2F09178143BA006731B9 /* CDXMacOSXSupport.h */,
-				A03F2F0A178143BA006731B9 /* CDXMacOSXSupport.mm */,
-				A03F2F0B178143BA006731B9 /* CocosDenshion.h */,
-				A03F2F0C178143BA006731B9 /* CocosDenshion.m */,
-				A03F2F0D178143BA006731B9 /* SimpleAudioEngine.mm */,
-				A03F2F0E178143BA006731B9 /* SimpleAudioEngine_objc.h */,
-				A03F2F0F178143BA006731B9 /* SimpleAudioEngine_objc.m */,
-			);
-			path = mac;
 			sourceTree = "<group>";
 		};
 		A03F2FD7178145F2006731B9 /* extensions */ = {
@@ -6157,12 +6113,6 @@
 			files = (
 				A03F2F79178143BA006731B9 /* Export.h in Headers */,
 				A03F2F7A178143BA006731B9 /* SimpleAudioEngine.h in Headers */,
-				A03F2F8A178143BA006731B9 /* CDAudioManager.h in Headers */,
-				A03F2F8C178143BA006731B9 /* CDConfig.h in Headers */,
-				A03F2F8D178143BA006731B9 /* CDOpenALSupport.h in Headers */,
-				A03F2F8F178143BA006731B9 /* CDXMacOSXSupport.h in Headers */,
-				A03F2F91178143BA006731B9 /* CocosDenshion.h in Headers */,
-				A03F2F94178143BA006731B9 /* SimpleAudioEngine_objc.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7606,12 +7556,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A03F2F8B178143BA006731B9 /* CDAudioManager.m in Sources */,
-				A03F2F8E178143BA006731B9 /* CDOpenALSupport.m in Sources */,
-				A03F2F90178143BA006731B9 /* CDXMacOSXSupport.mm in Sources */,
-				A03F2F92178143BA006731B9 /* CocosDenshion.m in Sources */,
-				A03F2F93178143BA006731B9 /* SimpleAudioEngine.mm in Sources */,
-				A03F2F95178143BA006731B9 /* SimpleAudioEngine_objc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8241,7 +8185,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
-					"COCOS2D_DEBUG=0",
+					"COCOS2D_DEBUG=1",
 					USE_FILE32API,
 					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
 				);

@@ -77,8 +77,7 @@ float const kCD_GainDefault = 1.0f;
 -(BOOL) _setUpSourceGroups:(int[]) definitions total:(NSUInteger) total; 
 @end
 
-#pragma mark -
-#pragma mark CDUtilities
+#pragma mark - CDUtilities
 
 @implementation CDUtilities
 
@@ -974,16 +973,6 @@ static BOOL _mixerRateSet = NO;
   if (!functioning_) {
       return;
   }
-    
-   // only pause a sound id that is playing
-   ALint state;
-   alGetSourcei(sourceId, AL_SOURCE_STATE, &state);
-   if (state != AL_PLAYING)
-   {
-        return;
-   }
-    
-    
   alSourcePause(sourceId);
   alGetError();//Clear error in case we pause any sounds that couldn't be paused
 }
@@ -1272,8 +1261,7 @@ static BOOL _mixerRateSet = NO;
 @end
 
 ////////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark CDAudioInterruptTargetGroup
+#pragma mark - CDAudioInterruptTargetGroup
 
 @implementation CDAudioInterruptTargetGroup
 
@@ -1336,8 +1324,7 @@ static BOOL _mixerRateSet = NO;
 
 ////////////////////////////////////////////////////////////////////////////
 
-#pragma mark -
-#pragma mark CDAsynchBufferLoader
+#pragma mark - CDAsynchBufferLoader
 
 @implementation CDAsynchBufferLoader
 
@@ -1381,8 +1368,7 @@ static BOOL _mixerRateSet = NO;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark CDBufferLoadRequest
+#pragma mark - CDBufferLoadRequest
 
 @implementation CDBufferLoadRequest
 
@@ -1404,8 +1390,7 @@ static BOOL _mixerRateSet = NO;
 @end
 
 ///////////////////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark CDFloatInterpolator
+#pragma mark - CDFloatInterpolator
 
 @implementation CDFloatInterpolator
 @synthesize start,end,interpolationType;
@@ -1453,8 +1438,7 @@ static BOOL _mixerRateSet = NO;
 @end
 
 ///////////////////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark CDPropertyModifier
+#pragma mark - CDPropertyModifier
 
 @implementation CDPropertyModifier
 
@@ -1552,8 +1536,7 @@ static BOOL _mixerRateSet = NO;
 @end
 
 ///////////////////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark CDSoundSourceFader
+#pragma mark - CDSoundSourceFader
 
 @implementation CDSoundSourceFader
 
@@ -1576,8 +1559,7 @@ static BOOL _mixerRateSet = NO;
 @end
 
 ///////////////////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark CDSoundSourcePanner
+#pragma mark - CDSoundSourcePanner
 
 @implementation CDSoundSourcePanner
 
@@ -1600,8 +1582,7 @@ static BOOL _mixerRateSet = NO;
 @end
 
 ///////////////////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark CDSoundSourcePitchBender
+#pragma mark - CDSoundSourcePitchBender
 
 @implementation CDSoundSourcePitchBender
 
@@ -1624,8 +1605,7 @@ static BOOL _mixerRateSet = NO;
 @end
 
 ///////////////////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark CDSoundEngineFader
+#pragma mark - CDSoundEngineFader
 
 @implementation CDSoundEngineFader
 
