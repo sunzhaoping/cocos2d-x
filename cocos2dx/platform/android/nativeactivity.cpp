@@ -84,9 +84,7 @@ static void cocos_init(cocos_dimensions d, struct android_app* app) {
     {
         cocos2d::EGLView *view = cocos2d::EGLView::getInstance();
         view->setFrameSize(d.w, d.h);
-        
         cocos_android_app_init(app);
-
         cocos2d::Application::getInstance()->run();
     }
 }
@@ -169,8 +167,8 @@ static cocos_dimensions engine_init_display(struct engine* engine) {
     cocos2d::DrawPrimitives::init();
     cocos2d::TextureCache::reloadAllTextures();
     cocos2d::NotificationCenter::getInstance()->postNotification(EVNET_COME_TO_FOREGROUND, NULL);
-    cocos2d::Director::getInstance()->setGLDefaultValues();
-    
+    if(cocos2d::Director::getInstance()->getOpenGLView())
+        cocos2d::Director::getInstance()->setGLDefaultValues();
 
     r.w = w;
     r.h = h;
