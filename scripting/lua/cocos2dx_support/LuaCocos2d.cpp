@@ -64074,7 +64074,8 @@ TOLUA_API int tolua_Cocos2d_open (lua_State* tolua_S)
   tolua_function(tolua_S,"CCAffineTransformEqualToTransform",tolua_Cocos2d_CCAffineTransformEqualToTransform00);
   tolua_function(tolua_S,"CCAffineTransformInvert",tolua_Cocos2d_CCAffineTransformInvert00);
   tolua_constant(tolua_S,"kLanguageEnglish",(int)kLanguageEnglish);
-  tolua_constant(tolua_S,"kLanguageChinese",(int)kLanguageChinese);
+  tolua_constant(tolua_S,"kLanguageChineseT",(int)kLanguageChineseT);
+  tolua_constant(tolua_S,"kLanguageChineseS",(int)kLanguageChineseS);
   tolua_constant(tolua_S,"kLanguageFrench",(int)kLanguageFrench);
   tolua_constant(tolua_S,"kLanguageItalian",(int)kLanguageItalian);
   tolua_constant(tolua_S,"kLanguageGerman",(int)kLanguageGerman);
