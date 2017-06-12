@@ -1162,7 +1162,7 @@ JSBool jsval_to_std_string(JSContext *cx, jsval v, std::string* ret) {
     return JS_TRUE;
 }
 
-JSBool jsval_to_ccpoint(JSContext *cx, jsval v, Point* ret) {
+JSBool jsval_to_ccpoint(JSContext *cx, jsval v, cocos2d::Point* ret) {
     JSObject *tmp;
     jsval jsx, jsy;
     double x, y;
@@ -1239,7 +1239,7 @@ JSBool jsvals_variadic_to_ccarray( JSContext *cx, jsval *vp, int argc, Array** r
     return ok;
 }
 
-JSBool jsval_to_ccrect(JSContext *cx, jsval v, Rect* ret) {
+JSBool jsval_to_ccrect(JSContext *cx, jsval v, cocos2d::Rect* ret) {
     JSObject *tmp;
     jsval jsx, jsy, jswidth, jsheight;
     double x, y, width, height;
@@ -1262,7 +1262,7 @@ JSBool jsval_to_ccrect(JSContext *cx, jsval v, Rect* ret) {
     return JS_TRUE;
 }
 
-JSBool jsval_to_ccsize(JSContext *cx, jsval v, Size* ret) {
+JSBool jsval_to_ccsize(JSContext *cx, jsval v, cocos2d::Size* ret) {
     JSObject *tmp;
     jsval jsw, jsh;
     double w, h;
@@ -1343,7 +1343,7 @@ JSBool jsval_to_cccolor3b(JSContext *cx, jsval v, Color3B* ret) {
     return JS_TRUE;	
 }
 
-JSBool jsval_to_ccarray_of_CCPoint(JSContext* cx, jsval v, Point **points, int *numPoints) {
+JSBool jsval_to_ccarray_of_CCPoint(JSContext* cx, jsval v, cocos2d::Point **points, int *numPoints) {
     // Parsing sequence
     JSObject *jsobj;
     JSBool ok = JS_ValueToObject( cx, v, &jsobj );
@@ -1353,7 +1353,7 @@ JSBool jsval_to_ccarray_of_CCPoint(JSContext* cx, jsval v, Point **points, int *
     uint32_t len;
     JS_GetArrayLength(cx, jsobj, &len);
 
-    Point *array = (Point*)malloc( sizeof(Point) * len);
+    cocos2d::Point *array = (cocos2d::Point*)malloc( sizeof(cocos2d::Point) * len);
 
     for( uint32_t i=0; i< len;i++ ) {
         jsval valarg;
@@ -1706,7 +1706,7 @@ jsval c_string_to_jsval(JSContext* cx, const char* v, size_t length /* = -1 */) 
     return ret;
 }
 
-jsval ccpoint_to_jsval(JSContext* cx, const Point& v) {
+jsval ccpoint_to_jsval(JSContext* cx, const cocos2d::Point& v) {
     JSObject *tmp = JS_NewObject(cx, NULL, NULL, NULL);
     if (!tmp) return JSVAL_NULL;
     JSBool ok = JS_DefineProperty(cx, tmp, "x", DOUBLE_TO_JSVAL(v.x), NULL, NULL, JSPROP_ENUMERATE | JSPROP_PERMANENT) &&
@@ -1730,7 +1730,7 @@ jsval ccacceleration_to_jsval(JSContext* cx, const Acceleration& v) {
     return JSVAL_NULL;
 }
 
-jsval ccrect_to_jsval(JSContext* cx, const Rect& v) {
+jsval ccrect_to_jsval(JSContext* cx, const cocos2d::Rect& v) {
     JSObject *tmp = JS_NewObject(cx, NULL, NULL, NULL);
     if (!tmp) return JSVAL_NULL;
     JSBool ok = JS_DefineProperty(cx, tmp, "x", DOUBLE_TO_JSVAL(v.origin.x), NULL, NULL, JSPROP_ENUMERATE | JSPROP_PERMANENT) &&
@@ -1743,7 +1743,7 @@ jsval ccrect_to_jsval(JSContext* cx, const Rect& v) {
     return JSVAL_NULL;
 }
 
-jsval ccsize_to_jsval(JSContext* cx, const Size& v) {
+jsval ccsize_to_jsval(JSContext* cx, const cocos2d::Size& v) {
     JSObject *tmp = JS_NewObject(cx, NULL, NULL, NULL);
     if (!tmp) return JSVAL_NULL;
     JSBool ok = JS_DefineProperty(cx, tmp, "width", DOUBLE_TO_JSVAL(v.width), NULL, NULL, JSPROP_ENUMERATE | JSPROP_PERMANENT) &&
@@ -2214,10 +2214,10 @@ static Color3B getColorFromJSObject(JSContext *cx, JSObject *colorObject)
     return out;
 }
 
-Size getSizeFromJSObject(JSContext *cx, JSObject *sizeObject)
+cocos2d::Size getSizeFromJSObject(JSContext *cx, JSObject *sizeObject)
 {
     jsval jsr;
-    Size out;
+    cocos2d::Size out;
     JS_GetProperty(cx, sizeObject, "width", &jsr);
     double width = 0.0;
     JS_ValueToNumber(cx, jsr, &width);
@@ -2349,7 +2349,7 @@ JSBool jsval_to_FontDefinition( JSContext *cx, jsval vp, FontDefinition *out )
         if( out->_shadow._shadowEnabled )
         {
             // default shadow values
-            out->_shadow._shadowOffset  = Size(5, 5);
+            out->_shadow._shadowOffset  = cocos2d::Size(5, 5);
             out->_shadow._shadowBlur    = 1;
             out->_shadow._shadowOpacity = 1;
             

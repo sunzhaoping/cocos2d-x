@@ -245,7 +245,7 @@ public:
         }
     }
     
-    virtual Size tableCellSizeForIndex(TableView *table, unsigned int idx)
+    virtual cocos2d::Size tableCellSizeForIndex(TableView *table, unsigned int idx)
     {
         jsval ret;
         bool ok = callJSDelegate(table, idx, "tableCellSizeForIndex", ret);
@@ -254,11 +254,11 @@ public:
         }
         if (ok) {
             JSContext* cx = ScriptingCore::getInstance()->getGlobalContext();
-            Size size;
+            cocos2d::Size size;
             JSBool isSucceed = jsval_to_ccsize(cx, ret, &size);
             if (isSucceed) return size;
         }
-        return Size::ZERO;
+        return cocos2d::Size::ZERO;
         
     }
     

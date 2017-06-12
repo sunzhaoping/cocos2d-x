@@ -43,8 +43,6 @@ struct cpDampedSpring {
 	cpVect r1, r2;
 	cpFloat nMass;
 	cpVect n;
-	
-	cpFloat jAcc;
 };
 
 /// Allocate a damped spring.

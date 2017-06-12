@@ -49,8 +49,7 @@ preStep(cpDampedSpring *spring, cpFloat dt)
 
 	// apply spring force
 	cpFloat f_spring = spring->springForceFunc((cpConstraint *)spring, dist);
-	cpFloat j_spring = spring->jAcc = f_spring*dt;
-	apply_impulses(a, b, spring->r1, spring->r2, cpvmult(spring->n, j_spring));
+	apply_impulses(a, b, spring->r1, spring->r2, cpvmult(spring->n, f_spring*dt));
 }
 
 static void applyCachedImpulse(cpDampedSpring *spring, cpFloat dt_coef){}
@@ -72,15 +71,13 @@ applyImpulse(cpDampedSpring *spring, cpFloat dt)
 	cpFloat v_damp = (spring->target_vrn - vrn)*spring->v_coef;
 	spring->target_vrn = vrn + v_damp;
 	
-	cpFloat j_damp = v_damp*spring->nMass;
-	spring->jAcc += j_damp;
-	apply_impulses(a, b, spring->r1, spring->r2, cpvmult(spring->n, j_damp));
+	apply_impulses(a, b, spring->r1, spring->r2, cpvmult(spring->n, v_damp*spring->nMass));
 }
 
 static cpFloat
-getImpulse(cpDampedSpring *spring)
+getImpulse(cpConstraint *constraint)
 {
-	return spring->jAcc;
+	return 0.0f;
 }
 
 static const cpConstraintClass klass = {
@@ -109,8 +106,6 @@ cpDampedSpringInit(cpDampedSpring *spring, cpBody *a, cpBody *b, cpVect anchr1, 
 	spring->stiffness = stiffness;
 	spring->damping = damping;
 	spring->springForceFunc = (cpDampedSpringForceFunc)defaultSpringForce;
-	
-	spring->jAcc = 0.0f;
 	
 	return spring;
 }

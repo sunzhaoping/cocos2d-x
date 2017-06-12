@@ -148,7 +148,6 @@ static inline cpBool cpBodyIsStatic(const cpBody *body)
 }
 
 /// Returns true if the body has not been added to a space.
-/// Note: Static bodies are a subtype of rogue bodies.
 static inline cpBool cpBodyIsRogue(const cpBody *body)
 {
 	return (body->CP_PRIVATE(space) == ((cpSpace*)0));

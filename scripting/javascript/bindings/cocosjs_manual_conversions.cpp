@@ -8,7 +8,7 @@
 
 using namespace cocos2d;
 
-JSBool jsval_to_CCPoint( JSContext *cx, jsval vp, Point *ret )
+JSBool jsval_to_CCPoint( JSContext *cx, jsval vp, cocos2d::Point *ret )
 {
 #ifdef JSB_COMPATIBLE_WITH_COCOS2D_HTML5_BASIC_TYPES
     

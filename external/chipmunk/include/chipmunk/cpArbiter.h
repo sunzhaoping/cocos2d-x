@@ -117,15 +117,7 @@ CP_DefineArbiterStructSetter(type, member, name)
 
 CP_DefineArbiterStructProperty(cpFloat, e, Elasticity)
 CP_DefineArbiterStructProperty(cpFloat, u, Friction)
-
-// Get the relative surface velocity of the two shapes in contact.
-cpVect cpArbiterGetSurfaceVelocity(cpArbiter *arb);
-
-// Override the relative surface velocity of the two shapes in contact.
-// By default this is calculated to be the difference of the two
-// surface velocities clamped to the tangent plane.
-void cpArbiterSetSurfaceVelocity(cpArbiter *arb, cpVect vr);
-
+CP_DefineArbiterStructProperty(cpVect, surface_vr, SurfaceVelocity)
 CP_DefineArbiterStructProperty(cpDataPointer, data, UserData)
 
 /// Calculate the total impulse that was applied by this arbiter.
@@ -156,7 +148,7 @@ static inline void cpArbiterGetShapes(const cpArbiter *arb, cpShape **a, cpShape
 	}
 }
 /// A macro shortcut for defining and retrieving the shapes from an arbiter.
-#define CP_ARBITER_GET_SHAPES(__arb__, __a__, __b__) cpShape *__a__, *__b__; cpArbiterGetShapes(__arb__, &__a__, &__b__);
+#define CP_ARBITER_GET_SHAPES(arb, a, b) cpShape *a, *b; cpArbiterGetShapes(arb, &a, &b);
 
 /// Return the colliding bodies involved for this arbiter.
 /// The order of the cpSpace.collision_type the bodies are associated with values will match
@@ -168,7 +160,7 @@ static inline void cpArbiterGetBodies(const cpArbiter *arb, cpBody **a, cpBody *
 	(*b) = shape_b->body;
 }
 /// A macro shortcut for defining and retrieving the bodies from an arbiter.
-#define CP_ARBITER_GET_BODIES(__arb__, __a__, __b__) cpBody *__a__, *__b__; cpArbiterGetBodies(__arb__, &__a__, &__b__);
+#define CP_ARBITER_GET_BODIES(arb, a, b) cpBody *a, *b; cpArbiterGetBodies(arb, &a, &b);
 
 /// A struct that wraps up the important collision data for an arbiter.
 typedef struct cpContactPointSet {
@@ -185,13 +177,8 @@ typedef struct cpContactPointSet {
 		cpFloat dist;
 	} points[CP_MAX_CONTACTS_PER_ARBITER];
 } cpContactPointSet;
-
 /// Return a contact set from an arbiter.
 cpContactPointSet cpArbiterGetContactPointSet(const cpArbiter *arb);
-
-/// Replace the contact point set for an arbiter.
-/// This can be a very powerful feature, but use it with caution!
-void cpArbiterSetContactPointSet(cpArbiter *arb, cpContactPointSet *set);
 
 /// Returns true if this is the first step a pair of objects started colliding.
 cpBool cpArbiterIsFirstContact(const cpArbiter *arb);

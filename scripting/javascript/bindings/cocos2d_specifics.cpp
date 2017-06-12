@@ -2132,7 +2132,7 @@ JSBool js_cocos2dx_CCNode_setPosition(JSContext *cx, uint32_t argc, jsval *vp)
         ok &= JS_ValueToNumber(cx, argv[1], &y );
         JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
         
-        cobj->setPosition(Point(x,y));
+        cobj->setPosition(cocos2d::Point(x,y));
         JS_SET_RVAL(cx, vp, JSVAL_VOID);
         return JS_TRUE;
     }
@@ -2164,7 +2164,7 @@ JSBool js_cocos2dx_CCSprite_setPosition(JSContext *cx, uint32_t argc, jsval *vp)
         ok &= JS_ValueToNumber(cx, argv[1], &y );
 
         JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
-        cobj->setPosition(Point(x,y));
+        cobj->setPosition(cocos2d::Point(x,y));
         JS_SET_RVAL(cx, vp, JSVAL_VOID);
         return JS_TRUE;
     }
@@ -2205,7 +2205,7 @@ JSBool js_cocos2dx_CCTMXLayer_getTiles(JSContext *cx, uint32_t argc, jsval *vp)
 	JSB_PRECONDITION2( cobj, cx, JS_FALSE, "Invalid Native Object");
 	if (argc == 0) {
 		unsigned int* ret = cobj->getTiles();
-        Size size = cobj->getLayerSize();
+        cocos2d::Size size = cobj->getLayerSize();
         int count = size.width * size.height;
         JSObject* array = JS_NewUint32Array(cx, count);
         if (NULL == array) {
@@ -2234,7 +2234,7 @@ JSBool js_BezierActions_create(JSContext *cx, uint32_t argc, jsval *vp) {
         }
         
         int num;
-        Point *arr;
+        cocos2d::Point *arr;
         jsval_to_ccarray_of_CCPoint(cx, argv[1], &arr, &num);
         
         ccBezierConfig config;
@@ -2279,7 +2279,7 @@ JSBool js_CardinalSplineActions_create(JSContext *cx, uint32_t argc, jsval *vp) 
         ok &= JS_ValueToNumber(cx, argv[0], &dur);
         
         int num;
-        Point *arr;
+        cocos2d::Point *arr;
         ok &= jsval_to_ccarray_of_CCPoint(cx, argv[1], &arr, &num);
         
         double ten;
@@ -2330,7 +2330,7 @@ JSBool js_CatmullRomActions_create(JSContext *cx, uint32_t argc, jsval *vp) {
         ok &= JS_ValueToNumber(cx, argv[0], &dur);
         
         int num;
-        Point *arr;
+        cocos2d::Point *arr;
         ok &= jsval_to_ccarray_of_CCPoint(cx, argv[1], &arr, &num);
         
         JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
@@ -2427,7 +2427,7 @@ JSBool js_cocos2dx_ccpAdd(JSContext *cx, uint32_t argc, jsval *vp)
 		ok &= jsval_to_ccpoint(cx, argv[1], &arg1);
         JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
         
-		Point ret = arg0 + arg1;
+        cocos2d::Point ret = arg0 + arg1;
 		
 		jsval jsret = ccpoint_to_jsval(cx, ret);
 		JS_SET_RVAL(cx, vp, jsret);
@@ -2497,7 +2497,7 @@ JSBool js_cocos2dx_ccpClamp(JSContext *cx, uint32_t argc, jsval *vp)
 		ok &= jsval_to_ccpoint(cx, argv[2], &arg2);
         JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
         
-		Point ret = arg0.getClampPoint(arg1, arg2);
+        cocos2d::Point ret = arg0.getClampPoint(arg1, arg2);
 		
 		jsval jsret = ccpoint_to_jsval(cx, ret);
 		JS_SET_RVAL(cx, vp, jsret);
@@ -2558,7 +2558,7 @@ JSBool js_cocos2dx_ccpNeg(JSContext *cx, uint32_t argc, jsval *vp)
         ok &= jsval_to_ccpoint(cx, argv[0], &arg0);
         JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
         
-		Point ret = -arg0;
+		cocos2d::Point ret = -arg0;
 		
 		jsval jsret = ccpoint_to_jsval(cx, ret);
 		JS_SET_RVAL(cx, vp, jsret);
@@ -2581,7 +2581,7 @@ JSBool js_cocos2dx_ccpSub(JSContext *cx, uint32_t argc, jsval *vp)
 		ok &= jsval_to_ccpoint(cx, argv[1], &arg1);
         JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
         
-		Point ret = arg0 - arg1;
+		cocos2d::Point ret = arg0 - arg1;
 		
 		jsval jsret = ccpoint_to_jsval(cx, ret);
 		JS_SET_RVAL(cx, vp, jsret);
@@ -2606,7 +2606,7 @@ JSBool js_cocos2dx_ccpMult(JSContext *cx, uint32_t argc, jsval *vp)
         
         JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
 		
-		Point ret = arg0 * arg1;
+		cocos2d::Point ret = arg0 * arg1;
 		
 		jsval jsret = ccpoint_to_jsval(cx, ret);
 		JS_SET_RVAL(cx, vp, jsret);
@@ -2629,7 +2629,7 @@ JSBool js_cocos2dx_ccpMidpoint(JSContext *cx, uint32_t argc, jsval *vp)
 		ok &= jsval_to_ccpoint(cx, argv[1], &arg1);
         JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
         
-		Point ret = arg0.getMidpoint(arg1);
+		cocos2d::Point ret = arg0.getMidpoint(arg1);
 		
 		jsval jsret = ccpoint_to_jsval(cx, ret);
 		JS_SET_RVAL(cx, vp, jsret);
@@ -2697,7 +2697,7 @@ JSBool js_cocos2dx_ccpPerp(JSContext *cx, uint32_t argc, jsval *vp)
 		ok &= jsval_to_ccpoint(cx, argv[0], &arg0);
         JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
         
-		Point ret = arg0.getPerp();
+		cocos2d::Point ret = arg0.getPerp();
 		
 		jsval jsret = ccpoint_to_jsval(cx, ret);
 		JS_SET_RVAL(cx, vp, jsret);
@@ -2719,7 +2719,7 @@ JSBool js_cocos2dx_ccpRPerp(JSContext *cx, uint32_t argc, jsval *vp)
 		ok &= jsval_to_ccpoint(cx, argv[0], &arg0);
         JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
         
-		Point ret = arg0.getRPerp();
+		cocos2d::Point ret = arg0.getRPerp();
 		
 		jsval jsret = ccpoint_to_jsval(cx, ret);
 		JS_SET_RVAL(cx, vp, jsret);
@@ -2743,7 +2743,7 @@ JSBool js_cocos2dx_ccpProject(JSContext *cx, uint32_t argc, jsval *vp)
 		ok &= jsval_to_ccpoint(cx, argv[1], &arg1);
         JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
         
-		Point ret = arg0.project(arg1);
+		cocos2d::Point ret = arg0.project(arg1);
 		
 		jsval jsret = ccpoint_to_jsval(cx, ret);
 		JS_SET_RVAL(cx, vp, jsret);
@@ -2766,7 +2766,7 @@ JSBool js_cocos2dx_ccpRotate(JSContext *cx, uint32_t argc, jsval *vp)
 		ok &= jsval_to_ccpoint(cx, argv[1], &arg1);
         JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
         
-		Point ret = arg0.rotate(arg1);
+		cocos2d::Point ret = arg0.rotate(arg1);
 		
 		jsval jsret = ccpoint_to_jsval(cx, ret);
 		JS_SET_RVAL(cx, vp, jsret);
@@ -2787,7 +2787,7 @@ JSBool js_cocos2dx_ccpNormalize(JSContext *cx, uint32_t argc, jsval *vp)
 		ok &= jsval_to_ccpoint(cx, argv[0], &arg0);
         JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
         
-		Point ret = arg0.normalize();
+		cocos2d::Point ret = arg0.normalize();
 		
 		jsval jsret = ccpoint_to_jsval(cx, ret);
 		JS_SET_RVAL(cx, vp, jsret);
@@ -2953,7 +2953,7 @@ JSBool js_cocos2dx_CCTMXLayer_getTileFlagsAt(JSContext *cx, uint32_t argc, jsval
     if (argc == 1)
     {
         ccTMXTileFlags flags;
-        Point arg0;
+        cocos2d::Point arg0;
         ok &= jsval_to_ccpoint(cx, argv[0], &arg0);
         JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
         cobj->getTileGIDAt(arg0, &flags);
@@ -3004,8 +3004,8 @@ JSBool js_cocos2dx_CCDrawNode_drawPolygon(JSContext *cx, uint32_t argc, jsval *v
             if( ! JS_GetArrayLength(cx, argArray, &l) )
                 return JS_FALSE;
 
-            Point* verts = new Point[ l ];
-            Point p;
+            cocos2d::Point* verts = new cocos2d::Point[ l ];
+            cocos2d::Point p;
 
             for( uint32_t i=0; i<l; i++ ) {
                 jsval pointvp;

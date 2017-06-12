@@ -50,13 +50,14 @@ include ../../../cocos2dx/proj.emscripten/cocos2dx.mk
 
 INCLUDES = -I../..
 
-# Cocos2d is not responsible for warnings in external projects
-CXXFLAGS += -w
+# Unfortunetly Box2D doesn't compiler cleanly without these
+CXXFLAGS += -Qunused-variable
+CXXFLAGS += -Wno-uninitialized
 
 ifeq ($(DEBUG), 1)
-DEFINES += -D_DEBUG
+DEFINES = -D_DEBUG
 else
-DEFINES +=
+DEFINES =
 endif
 
 TARGET := $(LIB_DIR)/$(TARGET)

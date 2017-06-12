@@ -31,7 +31,7 @@
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.buildLocation</key>
-					<value>${workspace_loc:/box2d/Debug-Tizen-Emulator}</value>
+					<value>${workspace_loc:/box2d/Debug-Tizen-Device}</value>
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.cleanBuildTarget</key>
@@ -88,27 +88,27 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>src/Box2D.h</name>
+			<name>src/Box2D/Box2D.h</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Box2D.h</locationURI>
 		</link>
 		<link>
-			<name>src/Collision</name>
+			<name>src/Box2D/Collision</name>
 			<type>2</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Collision</locationURI>
 		</link>
 		<link>
-			<name>src/Common</name>
+			<name>src/Box2D/Common</name>
 			<type>2</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Common</locationURI>
 		</link>
 		<link>
-			<name>src/Dynamics</name>
+			<name>src/Box2D/Dynamics</name>
 			<type>2</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Dynamics</locationURI>
 		</link>
 		<link>
-			<name>src/Rope</name>
+			<name>src/Box2D/Rope</name>
 			<type>2</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Rope</locationURI>
 		</link>
