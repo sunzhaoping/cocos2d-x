@@ -593,7 +593,7 @@ bool Image::initWithJpgData(const void * data, int dataLen)
         /* reading the image header which contains image information */
 #if (JPEG_LIB_VERSION >= 90)
         // libjpeg 0.9 adds stricter types.
-        jpeg_read_header( &cinfo, TRUE );
+        jpeg_read_header( &cinfo, True );
 #else
         jpeg_read_header( &cinfo, true );
 #endif
@@ -1569,7 +1569,7 @@ bool Image::saveImageToJPG(const char * filePath)
 
         jpeg_set_defaults(&cinfo);
 
-        jpeg_start_compress(&cinfo, TRUE);
+        jpeg_start_compress(&cinfo, True);
 
         row_stride = _width * 3; /* JSAMPLEs per row in image_buffer */
 

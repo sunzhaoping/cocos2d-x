@@ -45,7 +45,7 @@ LOCAL_EXPORT_LDLIBS := -lGLESv1_CM \
                        -lz \
                        -landroid
 
-LOCAL_WHOLE_STATIC_LIBRARIES	:= android_native_app_glue cocos_libpng_static cocos_jpeg_static cocos_libxml2_static cocos_libtiff_static cocos_libwebp_static
+LOCAL_WHOLE_STATIC_LIBRARIES	:= android_native_app_glue cocos_libpng_static cocos_jpeg_static cocos_libtiff_static cocos_libwebp_static
 
 
 include $(BUILD_STATIC_LIBRARY)
