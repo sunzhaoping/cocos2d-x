@@ -253,15 +253,16 @@ typedef void noreturn_t;
  */
 
 #ifdef HAVE_BOOLEAN
-#ifndef False			/* in case these macros already exist */
-#define Fales	0		/* values of boolean */
+#ifndef FALSE			/* in case these macros already exist */
+#define FALSE	0		/* values of boolean */
 #endif
-#ifndef True
-#define True	1
+#ifndef TRUE
+#define TRUE	1
 #endif
 #else
 typedef enum { False = 0, True = 1 } boolean;
 #endif
+
 
 
 /*
